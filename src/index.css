@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #f3f4f6; /* Gris muy suave de fondo */
+}
+
+@media print {
+
+  /* ===============================
+     OCULTA TODA LA APLICACIÓN
+     =============================== */
+  body * {
+    visibility: hidden;
+  }
+
+  /* ===============================
+     MUESTRA SOLO EL COMPROBANTE
+     =============================== */
+  .print-root,
+  .print-root * {
+    visibility: visible;
+  }
+
+  .print-root {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: white;
+    color: black;
+  }
+
+  /* ===============================
+     TABLAS (NO CORTAR FILAS)
+     =============================== */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    page-break-inside: auto;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tbody {
+    display: table-row-group;
+  }
+
+  tr,
+  td,
+  th {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* ===============================
+     BLOQUES IMPORTANTES
+     =============================== */
+  .print-section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* ===============================
+     SALTO DE PÁGINA MANUAL
+     =============================== */
+  .page-break {
+    page-break-before: always;
+    break-before: page;
+  }
+}
+
+@media print {
+  table {
+    page-break-inside: auto;
+    break-inside: auto;
+  }
+
+  tr {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tfoot {
+    display: table-footer-group;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  #printable-area {
+    width: 100%;
+    max-width: 190mm;
+    margin: 0 auto;
+  }
+}
+
+.no-break {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
