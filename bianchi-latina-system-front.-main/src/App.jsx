@@ -9,6 +9,7 @@ import VentasPage from './pages/VentasPage';
 import DashboardPage from './pages/DashboardPage';
 import CajaPage from './pages/CajaPage';
 import DeudoresPage from './pages/DeudoresPage';
+import CuentasCorrientesPage from './pages/CuentasCorrientesPage';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
             <Route path="/ventas" element={<VentasPage />} />
             <Route path="/caja" element={<CajaPage />} />
             <Route path="/deudores" element={<DeudoresPage />} />
+            <Route path="/cuentas-corrientes" element={<CuentasCorrientesPage />} />
           </Routes>
         </main>
       </div>

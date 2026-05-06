@@ -6,7 +6,8 @@ import {
   ShoppingCart, 
   LayoutDashboard, 
   Archive,
-  AlertTriangle 
+  AlertTriangle,
+  BookOpen // <-- ACÁ AGREGAMOS EL ÍCONO DE LA LIBRETA
 } from 'lucide-react';
 import api from '../services/api';
 import logo from '../assets/logo.png'; 
@@ -90,6 +91,11 @@ export default function Sidebar() {
         
         <Link to="/clientes" className={getLinkClass('/clientes')}>
            <Users size={20} /> <span className="font-medium">Clientes</span>
+        </Link>
+
+        {/* 👇 ACÁ ENTRAMOS NOSOTROS CON LA LIBRETA 👇 */}
+        <Link to="/cuentas-corrientes" className={getLinkClass('/cuentas-corrientes')}>
+           <BookOpen size={20} /> <span className="font-medium">Cuentas Corrientes</span>
         </Link>
 
         {/* Sección Cobranzas (Con Alerta Visual) */}
